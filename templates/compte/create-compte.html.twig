@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{# <!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Symfony Banque</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link type="text/css" rel="stylesheet" href="{{asset('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')}}"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+	</head>
+    
+
+	<bo >
+
+     <ul class="nav">
+        
+        <li class="nav-item">
+            <a class="nav-link" href="">Liste des Clients</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">Liste des Comptes</a>
+        </li>
+  
+    </ul> #}
+		
+{% block content %}
+
+ <div class="col-md-6 col-xs-12 " >
+			<div class="panel panel-info">
+				<div class="panel-heading">Formulaires de gestion des Comptes</div>
+				<div class="panel-body">
+				{{ form_start(form, {'action':path('create-compte'), 'method':'POST', 'attr':{'class':'col'}}  )}}
+					<div> {{form_row(form.numagence)}}</div>
+					<div > {{form_row(form.numcompte)}}</div>
+					<div > {{form_row(form.clerib)}}</div>
+					<div > {{form_row(form.typecompte)}}</div>
+					<div > {{form_row(form.idclient)}}</div>
+					 
+					 
+
+					<div >
+                                    <button class="btn btn-success">Valider</button>
+                                    <button type="reset" class="btn btn-danger">Annuler</button>
+                                </div>
+					
+                    {{form_end(form)}}
+					
+				</div>
+			</div>
+		</div>
+ {% endblock %}
+       

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+	<div class="container" style="margin-top:80px;">
+    <a href="{{ path('create-compte') }}" class="btn btn-success mb-2">Create Compte</a>
+		<div class="col-md-6 col-xs-12 " >
+			<div class="panel panel-info">
+				<div class="panel-heading">Liste des Comptes</div>
+				<div class="panel-body">
+					<table class="table table-bordered">
+					<thead>
+					<tr>
+						<th scope="col">Identifiant</th>
+						<th scope="col">Numero Agence</th>
+						<th scope="col">Numero compte</th>
+						<th scope="col">Cle Rib</th>
+                        <th scope="col">Type compte</th>
+                        <th scope="col">Client</th>
+						<th scope="col">Action</th>
+						<th scope="col">Action</th>
+					</tr>
+					</thead>
+					 <tbody>
+              {% for compte in comptes %}
+                <tr>
+                  <td>{{compte.id}}</td>
+                  <td>{{compte.numagence}}</td>
+                  <td>{{compte.numcompte}}</td>
+                  <td>{{compte.clerib}}</td>
+                  <td>{{compte.typecompte}}</td>
+				 <td>{{compte.idclient.nom}}</td>  
+                  <td>
+                      <a href="#" class="btn btn-dark">Editer</a>
+                  </td>
+                  <td>
+                      <a href="#" class="btn btn-danger">Supprimer</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+						
+					</table>
+				</div>
+			</div>
+		</div>	
+	</div>
+	{% endblock %}
